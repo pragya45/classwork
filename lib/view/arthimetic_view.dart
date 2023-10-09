@@ -1,3 +1,4 @@
+import 'package:classwork/app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
 class ArithmeticView extends StatefulWidget {
@@ -20,6 +21,65 @@ class _ArithmeticViewState extends State<ArithmeticView> {
     int second = int.parse(secondController.text);
 
     int result = first + second;
+
+    Navigator.pushNamed(
+      context, //where we are screens
+
+      AppRoute.outputRoute,
+
+      arguments: result,
+    );
+  }
+
+// sub
+  sub() {
+    int first = int.parse(firstController.text);
+
+    int second = int.parse(secondController.text);
+
+    int result = first - second;
+
+    Navigator.pushNamed(
+      context, //where we are screens
+
+      AppRoute.outputRoute,
+
+      arguments: result,
+    );
+  }
+
+  //multi
+  multi() {
+    int first = int.parse(firstController.text);
+
+    int second = int.parse(secondController.text);
+
+    int result = first * second;
+
+    Navigator.pushNamed(
+      context, //where we are screens
+
+      AppRoute.outputRoute,
+
+      arguments: result,
+    );
+  }
+
+  //divide
+  divide() {
+    int first = int.parse(firstController.text);
+
+    int second = int.parse(secondController.text);
+
+    int result = (first ~/ second);
+
+    Navigator.pushNamed(
+      context, //where we are screens
+
+      AppRoute.outputRoute,
+
+      arguments: result,
+    );
   }
 
   @override
@@ -61,21 +121,33 @@ class _ArithmeticViewState extends State<ArithmeticView> {
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      if (key.currentState!.validate()) {
+                        sub();
+                      }
+                    },
                     child: const Text('Subtraction'),
                   ),
                 ),
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      if (key.currentState!.validate()) {
+                        multi();
+                      }
+                    },
                     child: const Text('Multiplication'),
                   ),
                 ),
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      if (key.currentState!.validate()) {
+                        divide();
+                      }
+                    },
                     child: const Text('Division'),
                   ),
                 ),

@@ -1,6 +1,8 @@
-import 'package:classwork/view/arthimetic_view.dart';
 import 'package:classwork/view/dashboard_view.dart';
 import 'package:classwork/view/output_view.dart';
+
+import '../../view/arthimetic_view.dart';
+import '../../view/random_view.dart';
 
 class AppRoute {
   AppRoute._();
@@ -8,12 +10,14 @@ class AppRoute {
   static const String dashboardRoute = '/';
   static const String arithmeticRoute = '/arithmetic';
   static const String outputRoute = '/output';
+  static const String randomRoute = '/random';
 
   static getApplicationRoute() {
     return {
       dashboardRoute: (context) => const DashboardView(),
       outputRoute: (context) => const OutputView(),
       arithmeticRoute: (context) => const ArithmeticView(),
+      randomRoute: (context) => const RandomView(),
     };
   }
 }

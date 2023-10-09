@@ -21,6 +21,16 @@ class DashboardView extends StatelessWidget {
                 },
                 child: const Text('Arthimetic'),
               ),
+            ),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {
+                  //Name route
+                  Navigator.pushNamed(context, AppRoute.randomRoute);
+                },
+                child: const Text('Random Number'),
+              ),
             )
           ],
         ),
